@@ -1,0 +1,2 @@
+rootProject.name='MySuperGranProyect2'
+include ':app'
