@@ -28,6 +28,11 @@
         android:layout_height="wrap_content"
         android:onClick="Verificar"
         android:text="Verificar" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="sucursales"
+        android:text="sucursales" />
     <TextView
         android:id="@+id/txtvalor"
         android:layout_width="match_parent"
