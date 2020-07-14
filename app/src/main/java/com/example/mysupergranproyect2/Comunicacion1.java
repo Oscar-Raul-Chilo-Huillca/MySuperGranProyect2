@@ -8,25 +8,30 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Comunicacion1	extends AppCompatActivity { EditText edtnombre;
+public class Comunicacion1	extends AppCompatActivity {
+    EditText edtnombre;
     EditText edtingresomes;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_comunicacion1);
-    edtnombre=findViewById(R.id.edtnombre);
-    edtingresomes=findViewById(R.id.edtingresomes);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_comunicacion1);
+        edtnombre = findViewById(R.id.edtnombre);
+        edtingresomes = findViewById(R.id.edtingresomes);
     }
-    public void Verificar(View view){
+
+    public void Verificar(View view) {
         Intent intent = new Intent(this, Comunicacion2.class);
         intent.putExtra("nombre", edtnombre.getText().toString());
         intent.putExtra("ingresomes", Integer.parseInt(edtingresomes.getText().toString()));
-        //startActivity(intent);
-        startActivityForResult(intent, 123);
+// startActivity(intent);
+        startActivityForResult(intent, 1234);
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        TextView miresultado = findViewById(R.id.txtvalor);
+    TextView miresultado = findViewById(R.id.txtvalor);
         if (requestCode == 1234 && resultCode == RESULT_OK) {
             String res = data.getExtras().getString("resultado");
         if (res.equals("aceptado"))
@@ -34,12 +39,6 @@ public class Comunicacion1	extends AppCompatActivity { EditText edtnombre;
         else
             miresultado.setText("Esperemos que cambie de opinion para trabajar con nosotros");
         }
-        if (requestCode == 3500 && resultCode == RESULT_OK) { miresultado.setText("Visitenos en alguna de nuestras sucursales");
-        }
-
-    }
-
-    public void sucursales(View view) {
-        startActivityForResult(new Intent(this, Comunicacion3.class), 3500);
     }
 }
+

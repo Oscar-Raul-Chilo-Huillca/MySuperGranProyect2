@@ -38,7 +38,7 @@ public class Comunicacion2 extends AppCompatActivity { TextView txtmensaje;
 
     public void aceptar(View view) {
         Intent intent=new Intent();
-        intent.putExtra("resultado","acertado");
+        intent.putExtra("resultado","aceptado");
         setResult(RESULT_OK, intent);
         finish();
     }

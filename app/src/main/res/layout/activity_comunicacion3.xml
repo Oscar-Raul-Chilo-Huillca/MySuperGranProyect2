@@ -21,4 +21,3 @@
         android:text="Volver"
         android:onClick="volver"/>
 </LinearLayout>
-    idget.ConstraintLayout>
